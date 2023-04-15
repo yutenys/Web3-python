@@ -5,7 +5,7 @@
 @File    ：reConfigParser.py
 @Author  ：Richard
 @License ：(C) Copyright 2021-2022, Richard.
-@Date    ：2023/4/2 15:46 
+@Date    ：2023/4/15 20:28 
 @contact :richard.eth@foxmail.com
 '''
 from configparser import ConfigParser

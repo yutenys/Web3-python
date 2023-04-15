@@ -21,7 +21,7 @@ class Wallet():
         # 生成钱包地址
         walletnum = input("请输入需要的钱包数量:")
         aa = []
-        conf = HandleConfig()
+        conf = HandleConfig(r'config/config.ini')
         time.sleep(random.randint(3,5)/1000)
         for i in range(int(walletnum)):
             aa.append(self.createAccount(i))
@@ -43,7 +43,7 @@ class Wallet():
                 f.write(line)
 
     def enWallets(self):
-        conf = HandleConfig()
+        conf = HandleConfig(r'config/config.ini')
         wallets = conf.config['DEFAULT']['WalletPath']
         en_wallets = conf.config['DEFAULT']['EN_WalletPath']
         if os.path.exists(wallets) == False:
@@ -79,7 +79,7 @@ class Wallet():
                     print(f'加密失败：{e}')
 
     def deWallet(self):
-        conf = HandleConfig()
+        conf = HandleConfig(r'config/config.ini')
         de_wallets = conf.config['DEFAULT']['DE_WalletPath']
         en_wallets = conf.config['DEFAULT']['EN_WalletPath']
         if os.path.exists(en_wallets) == False:

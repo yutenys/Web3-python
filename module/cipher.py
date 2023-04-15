@@ -11,13 +11,13 @@
 from Crypto.Cipher import AES
 import base64
 
+
 class AESCipher(object):
     def __init__(self, key,iv):
         self.key = key
         self.iv = iv
         self.mode = AES.MODE_CBC
         self.cipher = AES.new(self.key, self.mode,self.iv)
-
     def encrypto(self,data):
         pading = lambda s: s + (AES.block_size - len(s) % AES.block_size) * chr(AES.block_size - len(s) % AES.block_size).encode("utf-8")
         enc = base64.b64encode(self.cipher.encrypt(pading(data.encode("utf-8")))).decode("utf-8")

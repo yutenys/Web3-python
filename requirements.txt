@@ -1,0 +1,4 @@
+python-okx
+Crypto
+web3
+eth_account

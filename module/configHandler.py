@@ -9,16 +9,15 @@
 @contact :richard.eth@foxmail.com
 '''
 from module.reConfigParser import ReConfigParser
-
 class HandleConfig():
-    def __init__(self):
-        self.filename = r'config/config.ini'
+    def __init__(self,filename):
+        self.filename = filename
         self.config = ReConfigParser()
         self.config.read(self.filename)
 
     # 重写读取ini配置文件方法，解决配置文件读取后出现小写问题
-    def optionxform(self, optionstr: str) -> str:
-        return optionstr
+    # def optionxform(self, optionstr: str) -> str:
+    #     return optionstr
 
     # get_value获取所有的字符串，section区域名, option选项名
     def get_value(self,section,option):
